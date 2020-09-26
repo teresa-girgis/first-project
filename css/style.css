@@ -1,0 +1,547 @@
+
+/* General css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* common css */
+.container{
+    width: 80%;
+    margin:0 auto;
+}
+button{ 
+    font-family: inherit;
+}
+.clear{
+    clear: both;
+}
+i{
+    color:rgb(72, 114, 252);
+}
+.pad{
+    padding: 60px 0;
+}
+/* Header */
+header .logo{
+    width: 40%;
+    float: left;
+    margin-top: 2px;
+}
+header .logo img{
+    width: 25%;
+}
+header .nav{
+    width: 60%;
+    float: left;
+    list-style: none;
+    text-align: right;
+}
+header .nav > li{
+    display: inline-block;
+}
+header .nav > li >a{
+    text-decoration: none;
+    display: block;
+    padding:20px 15px;
+    color: white;
+    font-size: 13px;
+}
+header .nav > li a.active:after,header .nav > li> a:after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: rgb(72, 114, 252);
+    display: block;  /*to display the line*/
+}
+header .nav > li a.active:after{
+    width: 100%;
+}
+header .nav > li> a:after{
+    width: 0;
+}
+header .nav > li >a:hover::after{
+    width: 100%;
+    transition: width 0.5s;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-menu{
+    position: absolute;
+    top: 50px;
+    left: -20px;
+    width:100px;
+    background-color: rgb(72, 114, 252);
+    text-align: center;
+    padding-bottom: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+.dropdown-menu a{
+text-decoration: none;
+color: white;
+font-size: 13px;
+
+}
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Home */
+.home{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/background/background.jpg);
+    background-size: cover;
+    height: 100vh;   
+    color: white;    
+}
+.home-content{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.home h1{
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 44px;
+}
+.home p{
+    margin: 10px 0px;
+    padding: 0px 10px;
+    letter-spacing:2px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+.home .btn{
+    width: 150px;
+    padding:10px 0px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+.home .btn-start{
+    background-color: white;
+    margin-right: 10px;
+
+}
+.home .btn-learn{
+    background-color: rgb(72, 114, 252);
+    color: white;
+}
+
+.btn:hover{
+    opacity: 0.8;
+    transition: 0.5s;
+}
+/* About */
+
+.title h2{
+    font-size: 34px;
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 60px;
+}
+.line{
+    width: 60px;
+    height: 4px;
+    background-color: rgb(72, 114, 252);
+    margin: 10px auto  70px auto;
+}
+.about-content,.offer-content,.pricing-table-content,.our-team-content{
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 2px solid rgb(241, 240, 240);
+    margin:0 15px;
+    padding: 40px 20px;
+    position: relative;
+}
+.about-content i{
+    color: rgb(72, 114, 252);
+    margin-bottom: 10px;
+}
+.about-content h3{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    transition:color 0.5s;
+}
+.about-content p{
+    margin-bottom: 10px;
+    color: rgb(160, 155, 155);
+}
+.about-content a{
+    text-transform: capitalize;
+    color: rgb(72, 114, 252);
+    text-decoration: none;
+}
+.about-content::after{
+    content: "";
+    width: 0%;
+    height:0px;
+    background-color:rgb(19, 19, 19);
+    display: block;  
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition:width 0.5s;
+    z-index: -5;
+}
+.about-content:hover:after{
+    width: 100%;
+    height: 100%;
+}
+.about-content:hover.about-content h3{
+    color: white;
+}
+
+/* Portfolio */
+.Portfolio{
+    background-color:rgb(247, 247, 247);
+  
+}
+.Portfolio-content{
+    float: left;
+    width: 30%;
+    margin:15px 15px;
+    position: relative;
+}
+.Portfolio-content img{
+    width: 100%;
+}
+.top-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+     opacity: 0;
+     visibility: hidden;
+    transition: opacity 0.5s; 
+}
+.Portfolio-content:hover{
+    padding: 20px;
+ }
+.Portfolio-content:hover .top-layer{
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+} 
+.top-layer .layer-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%,-50%);
+    text-align: center;
+} 
+.layer-content a i{
+    color: white;
+    background-color:  rgb(72, 114, 252);
+    padding: 10px;
+    margin-bottom: 204px;
+    transition: margin 0.5s; 
+}
+.layer-content span{
+    color: rgb(125, 154, 252);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-style:bold;
+    margin-bottom: 20px;
+    transition: margin 0.5s; 
+}
+.layer-content h3{
+    color: white;
+    font-size: 18px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    transition: margin 0.5s; 
+}
+.Portfolio-content:hover .layer-content a i,.layer-content span,.layer-content h3{
+    margin-bottom: 0px;
+}
+/* offer */
+.offer{
+    position: relative;
+   
+}
+.offer-content{
+    text-align: left;
+    padding-left: 60px;
+    margin-bottom: 20px;
+}
+.offer-content p{
+    padding-top: 15px;
+    color: rgb(160, 155, 155);;
+}
+.offer-content .icons{
+position: absolute; 
+top: 40px;
+left:15px;
+font-size: 30px;
+}
+.offer-content::after{
+    content: "";
+    background-color: black;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition:width 0.5s;
+    z-index: -5;
+    
+}
+.offer-content:hover:after{
+    width: 100%;
+    height: 100%;
+}
+.offer-content:hover h3{
+    color: white;
+}
+/* services */
+.services{
+    background-color:rgb(247, 247, 247) ;
+}
+.services-content{
+width: 50%;
+float: left;
+}
+.services-content .title h2{
+   text-align: left;
+}
+.services-content .line{
+    margin: 10px 0  70px 0;
+}
+.services-content p{
+    color: rgb(160, 155, 155);
+    margin-bottom: 20px;
+    padding-right: 30px;
+}
+.services-content ul{
+    list-style: none;
+    color: rgb(160, 155, 155);
+}
+.services-content ul li i{
+    border: 2px solid  rgb(72, 114, 252) ;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.image-service{
+    width: 50%;
+    float: right;
+}
+.image-service img{
+    width: 100%;
+    padding-top: 70px;
+}
+.image-service ul{
+list-style: none;
+text-align: center;
+}
+.image-service ul li{
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    background-color:rgb(160, 155, 155);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.image-service ul li.active{
+    background-color: rgb(72, 114, 252) ;
+}
+.image-service ul li:hover{
+    background-color: rgb(72, 114, 252) ;   
+}
+/* price */
+.price{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/background/background2.jpg);
+    background-size: cover;
+   background-attachment: fixed;
+
+}
+.price-content{
+    float: left;
+    width: 22%;
+    text-align: center;
+    margin: 0 15px;
+    padding: 80px 0px;
+}
+.price-content h2{
+    color: white;
+    padding: 15px 0px;
+}
+.price-content span{
+    color: white;
+    font-size: 16px;
+}
+/* pricing-table-content */
+.pricing-table-content{
+    position: relative;
+}
+.pricing-table-content::after{
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    z-index: -5;
+    transition: height 0.5s;
+}
+.pricing-table-content:hover::after{
+    width: 100%;
+    height: 100%;
+}
+.pricing-table-content:hover .circle{
+color: white;
+}
+.pricing-table-content:hover .capital{
+    color:rgb(72, 114, 252) ;
+    }
+.pricing-table-content .capital{
+    text-transform: uppercase;
+    color: rgb(160, 155, 155);
+}
+.pricing-table-content .circle{
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgb(72, 114, 252) ;
+    border-radius: 50%;
+    margin: 15px auto;
+    padding-top: 25px;
+}
+.circle .dollar{
+    font-weight: bold;
+    font-size: 34px;
+    
+}
+.circle .month{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+.pricing-table-content ul{
+    list-style: none;
+    text-align: center;
+    color: rgb(160, 155, 155) ;
+}
+.pricing-table-content ul li{
+    padding-bottom: 15px;
+}
+.pricing-table-content .Purshase{
+    border: 3px solid rgb(72, 114, 252) ;
+    color: rgb(72, 114, 252);
+    width: 190px;
+    height: 40px;
+    margin: 10px auto;
+    padding-top: 5px;
+    cursor: pointer;
+}
+/* testimonial*/
+.testimonial{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/background/background3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+}
+.testimonial-content{
+    width: 50%;
+    float: left;
+    margin-top: 150px;
+    position: relative;
+}
+.testimonial-content header{
+    color: white;
+    padding:0  0 10px 90px ;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.testimonial-content footer{
+    color: rgb(72, 114, 252);
+    padding-left:90px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.testimonial-content p{
+    color: white;
+    padding-top: 30px;
+}
+.testimonial-content img{
+    top: -15px;
+    left: 0;
+    position: absolute;
+    border-radius: 50%;
+}
+/* our-team */
+.our-team-content{
+    background-color:rgb(235, 235, 235) ;
+    margin: 0 10px;
+}
+.our-team-content header{
+    text-transform: capitalize;
+    font-weight: bold;
+    padding: 15px 0;
+}
+.our-team-content footer{
+    text-transform: uppercase;
+    font-size:14px;
+    color: rgb(143, 142, 142);
+}
+.our-team-content .team-img img{
+    width: 100%;
+}
+.team-img{
+    position: relative;
+}
+.social-media{
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 8, 8,0.7);
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+}
+.social-media a i{
+color: white;
+background-color: rgb(72, 114, 252);
+width: 50px;
+height: 50px;
+display: block;
+text-align: center;
+padding-top: 20px;
+}
+.social-media a{
+    text-decoration: none;
+    width: 50px;
+height: 50px;
+}
+.social-media a i:hover{
+    background-color: rgb(82, 125, 243);
+}
+.our-team-content:hover .social-media{
+    visibility: visible;
+    opacity: 1;
+}
+.our-team-content:hover header{
+    color: rgb(82, 125, 243);
+}
+.our-team-content:hover{
+    background-color: black;
+}
+
